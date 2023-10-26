@@ -1,0 +1,35 @@
+:root {
+  --color-primary: "#DC0A2D";
+
+  --color-grayscale-dark: "#212121";
+  --color-grayscale-medium: "#666666";
+  --color-grayscale-light: "#E0E0E0";
+  --color-grayscale-background: "#E0E0E0";
+  --color-grayscale-white: "#FFFFFF";
+
+  --color-pokemon-type-bug: "#A7B723";
+  --color-pokemon-type-dark: "#75574C";
+  --color-pokemon-type-dragon: "#7037FF";
+  --color-pokemon-type-electric: "#F9CF30";
+  --color-pokemon-type-fairy: "#E69EAC";
+  --color-pokemon-type-fighting: "#C12239";
+  --color-pokemon-type-fire: "#F57D31";
+  --color-pokemon-type-flying: "#A891EC";
+  --color-pokemon-type-ghost: "#70559B";
+  --color-pokemon-type-normal: "#AAA67F";
+  --color-pokemon-type-grass: "#74CB48";
+  --color-pokemon-type-ground: "#DEC16B";
+  --color-pokemon-type-ice: "#9AD6DF";
+  --color-pokemon-type-poison: "#A43E9E";
+  --color-pokemon-type-psychic: "#FB5584";
+  --color-pokemon-type-rock: "#B69E31";
+  --color-pokemon-type-steel: "#B7B9D0";
+  --color-pokemon-type-water: "#6493EB";
+}
+
+a,
+button {
+  all: unset;
+
+  cursor: pointer;
+}
