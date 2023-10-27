@@ -4,7 +4,7 @@ export default function PokemonDetail() {
   const { name } = useParams();
 
   return (
-    <div>
+    <div className="container">
       <h2>Dashboard Index {name}</h2>
     </div>
   );

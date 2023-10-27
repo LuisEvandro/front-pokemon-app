@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Link, Outlet, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
           path="/"
           element={
             <div>
+              <Header />
+
               <Outlet />
             </div>
           }
