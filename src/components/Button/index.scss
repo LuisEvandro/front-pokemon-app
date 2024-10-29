@@ -1,0 +1,27 @@
+.button {
+  all: unset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px 20px;
+  min-height: 40px;
+  height: 100%;
+
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  color: var(--color-grayscale-white);
+  box-shadow: 0 1px 3px 1px rgba(33, 33, 33, 0.3);
+
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+  &:hover{
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}

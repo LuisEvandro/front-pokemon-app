@@ -2,12 +2,13 @@ import { Suspense, lazy } from "react";
 import { Link, Outlet, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import { PokemonProvider } from "./contexts/PokemonContext/PokemonContext";
 
 function App() {
   const PokemonDetail = lazy(() => import("./pages/PokemonDetail/index"));
 
   return (
-    <>
+    <PokemonProvider>
       <Routes>
         <Route
           path="/"
@@ -50,7 +51,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </>
+    </PokemonProvider>
   );
 }
 

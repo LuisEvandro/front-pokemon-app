@@ -1,0 +1,29 @@
+.text-field {
+  background-color: var(--color-grayscale-white);
+  border-radius: 10px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+   width: 24px; 
+   height: 24px;
+  }
+
+  .text-field-input {
+    width: 100%;
+    color: var(--color-grayscale-dark);
+    border: none;
+    min-height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+
+
+    &:focus {
+      box-shadow: 0 0 0 0;
+      border: 0 none;
+      outline: 0;
+    }
+  }
+}
