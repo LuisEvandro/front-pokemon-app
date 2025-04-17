@@ -1,16 +1,18 @@
+import "./index.scss";
 import { useEffect, useState } from "react";
 import { usePokemon } from "../../contexts/PokemonContext/PokemonContext";
 import PokemonService from "../../service/PokemonService";
 import { Pokemon } from "../../contexts/PokemonContext/types";
-import "./index.scss";
-import Modal from "../../components/Modal";
 import PokeCard from "../../components/PokeCard";
 import { Button } from "../../components/Button";
+import Modal from "../../components/Modal";
+import PokeDetail from "../../components/PokeDetail";
 
 export default function Home() {
-  const { pokemonsList, setPokemonsList } = usePokemon();
+  const { pokemonsList, setPokemonsList, pokemonSelected, setPokemonSelected } = usePokemon();
   const { page, setPage } = usePokemon();
-  const [isLoading, setIsLoading] = useState(false);
+  const [ isOpen, setIsOpen ] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(false);
   
   const handlePokemon = async () => {
     setIsLoading(true);
@@ -27,7 +29,15 @@ export default function Home() {
     <div className="container">
       <div className="pokemons-list">
         {pokemonsList?.map((pokemon) => (
-          <PokeCard key={pokemon.id} {...pokemon} />
+          <div 
+            key={pokemon.id}
+            onClick={() => {
+              setIsOpen(true);
+              setPokemonSelected(pokemon);
+            }}
+          >
+            <PokeCard {...pokemon} />
+          </div>
         ))}
       </div>
 
@@ -44,7 +54,16 @@ export default function Home() {
         </Button>
       </div>
 
-      {/* <Modal isOpen={true} onClose={() => {}} title="NOME DO POKEMON" children={<h1>TESTE</h1>} /> */}
+      <Modal 
+        isOpen={isOpen}
+        onClose={() => setIsOpen(!isOpen)}
+        title={pokemonSelected?.name}
+        backgroundColor={`var(--color-pokemon-type-${pokemonSelected?.types[0].type.name})`}
+        titleColor="var(--color-grayscale-white)"
+        children={
+          <PokeDetail pokemonSelected={pokemonSelected} />
+        }
+      />
     </div>
   );
 }

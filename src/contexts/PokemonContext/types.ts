@@ -15,6 +15,13 @@ export type PokemonStat = {
   }
 }
 
+export type PokemonMoves = {
+  move: {
+    name: string;
+    url: string;
+  }
+}
+
 export type Pokemon = {
   id: number;
   name: string;
@@ -23,6 +30,7 @@ export type Pokemon = {
   weight: number;
   height: number;
   stats: PokemonStat[];
+  moves: PokemonMoves[];
 }
 
 export type PokemonContextType = {
@@ -32,6 +40,8 @@ export type PokemonContextType = {
   setPokemonSearch: (search: string) => void;
   page: number;
   setPage: (page: number) => void;
+  pokemonSelected: Pokemon | undefined;
+  setPokemonSelected: (pokemon: Pokemon | undefined) => void;
 }
 
 export type PokemonProviderProps = {

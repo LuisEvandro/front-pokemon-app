@@ -20,7 +20,8 @@ const PokemonService = {
         types: pokemonResponse?.types,
         weight: pokemonResponse?.weight,
         height: pokemonResponse?.height,
-        stats: pokemonResponse?.stats
+        stats: pokemonResponse?.stats,
+        moves: pokemonResponse?.moves
       } as Pokemon);
     }
     

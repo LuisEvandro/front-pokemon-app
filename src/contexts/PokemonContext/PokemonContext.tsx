@@ -1,12 +1,13 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { Pokemon, PokemonContextType, PokemonProviderProps } from './types';
 
 const PokemonContext = createContext<PokemonContextType | undefined>(undefined);
 
-export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) => {
+export function PokemonProvider({ children }: PokemonProviderProps){
   const [pokemonsList, setPokemonsList] = useState<Pokemon[]>([]);
   const [pokemonSearch, setPokemonSearch] = useState<string>('');
   const [page, setPage] = useState<number>(1);
+  const [pokemonSelected, setPokemonSelected] = useState<Pokemon | undefined>(undefined);
 
   return (
     <PokemonContext.Provider 
@@ -16,7 +17,9 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
         pokemonSearch, 
         setPokemonSearch,
         page,
-        setPage
+        setPage,
+        pokemonSelected,
+        setPokemonSelected
       }}
     >
       {children}

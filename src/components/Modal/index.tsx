@@ -7,6 +7,7 @@ export default function Modal({
   isOpen,
   onClose,
   title,
+  titleColor,
   backgroundColor,
   children
 }: ModalProps){
@@ -28,7 +29,14 @@ export default function Modal({
         style={{ backgroundColor: backgroundColor || 'var(--color-grayscale-background)' }}
       >
         <div className="modal-header">
-          {title && <h2 className="modal-title">{title}</h2>}
+          {title && (
+            <h2 
+              className="modal-title" 
+              style={{color: titleColor || 'var(--color-grayscale-dark)'}}
+            >
+              {title.toUpperCase()}
+            </h2>
+          )}
           
           <button 
             className="modal-close" 

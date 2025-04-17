@@ -1,0 +1,135 @@
+.poke-detail-content {
+  position: sticky;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("../../images/pokeball.png");
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: 98% 5%;
+    opacity: 0.2;
+  }
+  
+
+  .poke-detail-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: -50px;
+    img{
+      width: 100%;
+      height: 100%;
+      max-width: 250px;
+    }
+  }
+
+  .poke-detail-info {
+    padding: 16px;
+    padding-top: 50px;
+    background-color: var(--color-grayscale-background);
+    border-radius: 10px;
+
+    .types {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin: 10px 0;
+    }
+
+    .about {
+      .about-title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 16px 0;
+      }
+
+      .about-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+
+        .about-info-item {
+          height: 100%;
+          width: 100%;
+          padding: 0 16px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .info-item-title {
+            color: var(--color-grayscale-medium);
+            font-size: 14px;
+            letter-spacing: 1px;
+          }
+          
+          .info-item-description{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+        
+        .height {
+          border-left: 1px solid rgba(102, 102, 102, 0.3);
+          border-right: 1px solid rgba(102, 102, 102, 0.3);
+
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+
+        .moves {
+          .info-item-description {
+            display: block;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .poke-detail-content {
+    .poke-detail-info {
+      .about {
+        .about-info {
+          display: block;
+
+          height: auto;
+          .about-info-item {
+            padding: 15px 0;
+            border: none;
+          }
+          .height {
+            border: none;
+            border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+            border-top: 1px solid rgba(102, 102, 102, 0.3);
+          }
+          .moves {
+            border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+          }
+        } 
+      }
+    }
+  }
+}

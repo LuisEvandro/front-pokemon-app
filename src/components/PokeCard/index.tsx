@@ -1,7 +1,10 @@
+import { usePokemon } from "../../contexts/PokemonContext/PokemonContext";
 import { Pokemon } from "../../contexts/PokemonContext/types";
 import "./index.scss";
 
 export default function PokeCard(pokemon: Pokemon){
+  const { setPokemonSelected } = usePokemon();
+
   const formatId = (id: number) => {
     return String(id).padStart(3, '0');
   }
@@ -9,7 +12,8 @@ export default function PokeCard(pokemon: Pokemon){
   return (
     <div 
       key={pokemon.id}
-      className="poke-card-content" 
+      className="poke-card-content"
+      onClick={() => setPokemonSelected(pokemon)}
     >
       <div className="poke-card-header">
         <span>{`#${formatId(pokemon.id)}`}</span>
